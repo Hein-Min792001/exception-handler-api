@@ -1,9 +1,6 @@
 package com.example.exceptionhandlerapi.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -22,6 +19,7 @@ public class Employee {
     @Size(min = 2,max = 16,message = "FirstName must be between 2 and 16")
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String email;
     private double Salary;
 
